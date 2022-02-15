@@ -31,7 +31,8 @@
         </div>
         
         <div class="h-screen grid content-around justify-center">
-            <svg onclick="playSong()" class="h-8 w-8 text-yellow-500 row-span-1"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <polygon points="10 8 16 12 10 16 10 8" /></svg>
+            <svg onclick="toggleSound()" class="h-8 w-8 text-yellow-500 row-span-1 player-button play"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <polygon points="10 8 16 12 10 16 10 8" /></svg>
+            <svg onclick="toggleSound()" class="h-8 w-8 text-yellow-500 player-button pause"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <line x1="10" y1="15" x2="10" y2="9" />  <line x1="14" y1="15" x2="14" y2="9" /></svg>
               <svg onclick="change('blue')" class="animate-bing h-8 w-8 text-yellow-500 row-span-1"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <polyline points="12 16 16 12 12 8" />  <line x1="8" y1="12" x2="16" y2="12" /></svg>
               <div class="flex flex-col content-center">
                 <svg class="h-5 w-5 text-yellow-500 border-2 rounded-full border-yellow-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="4" y="4" width="16" height="16" rx="4" />  <circle cx="12" cy="12" r="3" />  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" /></svg>
@@ -62,7 +63,8 @@
         <p class="vertical text-blue-500 text-center text-xl">で て け</p>
            
         <div class="h-screen grid content-around justify-center col-start-12">
-            <svg onclick="pauseSong()" class="h-8 w-8 text-blue-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <line x1="10" y1="15" x2="10" y2="9" />  <line x1="14" y1="15" x2="14" y2="9" /></svg>          
+            <svg onclick="toggleSound()" class="h-8 w-8 text-blue-500 row-span-1 player-button play"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <polygon points="10 8 16 12 10 16 10 8" /></svg>
+            <svg onclick="toggleSound()" class="h-8 w-8 text-blue-500 player-button pause"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <line x1="10" y1="15" x2="10" y2="9" />  <line x1="14" y1="15" x2="14" y2="9" /></svg>          
               <svg onclick="change('yellow')" class="animate-bing h-8 w-8 text-blue-700"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <line x1="16" y1="12" x2="8" y2="12" />  <line x1="16" y1="12" x2="12" y2="16" />  <line x1="16" y1="12" x2="12" y2="8" /></svg>
               <div class="flex flex-col content-center">
                 <svg class="h-5 w-5 text-blue-700 border-2 rounded-full border-blue-700"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="4" y="4" width="16" height="16" rx="4" />  <circle cx="12" cy="12" r="3" />  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" /></svg>
@@ -75,6 +77,40 @@
 <body id="app"></body>
 
 <script>
+    let isPlaying = false;
+
+    function toggleSound() {
+        if(isPlaying) {
+            pauseSong();
+        } else {
+            playSong();
+        }
+
+        isPlaying = !isPlaying;
+        changeIcon();
+    }
+    
+    function changeIcon() {
+        let playerButtons = document.getElementsByClassName('player-button');
+
+        for(let x = 0; x < playerButtons.length; x++) {
+            let playerButtonClassList = playerButtons[x].classList;
+            
+            if(playerButtonClassList.contains('play') && isPlaying) {
+                playerButtonClassList.add('hidden')
+            }
+            if(playerButtonClassList.contains('play') && !isPlaying) {
+                playerButtonClassList.remove('hidden')
+            }
+            if(playerButtonClassList.contains('pause') && isPlaying) {
+                playerButtonClassList.remove('hidden')
+            }
+            if(playerButtonClassList.contains('pause') && !isPlaying) {
+                playerButtonClassList.add('hidden')
+            }
+        }
+    }
+    
     function change(bodyId = 'yellow') {
         let app = document.getElementById('app');
         let incommingBody = document.getElementById(bodyId);
@@ -82,6 +118,7 @@
         app.innerHTML = '';
         app.appendChild(clone);
         console.log(bodyId)
+        changeIcon();
     }
 
     let audio = new Audio('../assets/song.mp3');
