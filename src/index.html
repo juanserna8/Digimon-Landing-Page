@@ -8,33 +8,37 @@
     <title>Document</title>
 </head>
 <template id="yellow">
-    <div class="sm:hidden lg:grid grid-cols-12 h-auto">
+    <div class="hidden sm:grid grid-cols-12 h-auto">
         <div class="h-screen grid grid-cols-1 content-around">
-            <img class="h-10 w-10 justify-self-center row-span-1" src="../Assets/yellow-logo-2.png" alt="Logo">
-            <svg onclick="change('blue')" class="animate-bing h-8 w-8 justify-self-center text-yellow-500 row-span-1"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <line x1="8" y1="12" x2="16" y2="12" />  <line x1="8" y1="12" x2="12" y2="16" />  <line x1="8" y1="12" x2="12" y2="8" /></svg>
+            <img class="h-10 w-10 justify-self-center row-span-1 transition duration-150 scale-100 hover:scale-50 hover:rotate-180" src="../Assets/yellow-logo-2.png" alt="Logo">
+            <svg onclick="change('blue')" class="animate-bing h-8 w-8 justify-self-center text-yellow-500 row-span-1 transition duration-150 scale-100 hover:scale-150"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <line x1="8" y1="12" x2="16" y2="12" />  <line x1="8" y1="12" x2="12" y2="16" />  <line x1="8" y1="12" x2="12" y2="8" /></svg>
             <div>
-                <img class="h-24 justify-self-center rounded-md mt-auto row-span-1" src="../Assets/wp3205369.jpg" alt="wolf tribal">
+                <img class="h-24 justify-self-center rounded-md mt-auto row-span-1 transition hover:animate-bounce" src="../Assets/wp3205369.jpg" alt="wolf tribal">
             </div>
         </div>
     
-        <div class="vl flex justify-self-end justify-center border-2 border-yellow-500 h-64 mt-auto mb-auto"></div>
-        <p class="vertical text-yellow-500 text-center justify-self-end">ナンス中です 只今メンテナ</p>
-        <p class="vertical text-yellow-500 text-center justify-self-start">アニメが好きだ</p>
+        <div class="vl flex justify-self-end justify-center border-2 border-yellow-500 h-64 mt-auto mb-auto transition duration-200 hover:scale-150"></div>
+        <p class="vertical text-yellow-500 text-center justify-self-end hover:text-white">ナンス中です 只今メンテナ</p>
+        <p class="vertical text-yellow-500 text-center justify-self-start hover:-translate-x-1 hover:text-white">アニメが好きだ</p>
     
-        <p class="vertical col-start-8 text-yellow-500 text-center justify-self-start text-4xl tracking-widest">あ ず ま ん が 大</p>
+        <p class="vertical col-start-8 text-yellow-500 text-center justify-self-start text-4xl tracking-widest hover:text-yellow-300">あ ず ま ん が 大</p>
     
     
         <div class="h-screen grid col-start-9 col-end-12 mr-3 content-end">
             <p class="vertical text-yellow-500 text-center text-xl pb-2">別 に チ ビ</p>
             <p class="vertical text-black text-center text-xl absolute mt-64">で て け</p>
-            <img class="rounded-md" src="../Assets/yellow-greymon.png" alt="">
+            <img class="rounded-md hover:animate-pulse" src="../Assets/yellow-greymon.png" alt="">
         </div>
         
         <div class="h-screen grid content-around justify-center">
-            <svg onclick="toggleSound()" class="h-8 w-8 text-yellow-500 row-span-1 player-button play"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <polygon points="10 8 16 12 10 16 10 8" /></svg>
-            <svg onclick="toggleSound()" class="h-8 w-8 text-yellow-500 player-button pause"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <line x1="10" y1="15" x2="10" y2="9" />  <line x1="14" y1="15" x2="14" y2="9" /></svg>
-              <svg onclick="change('blue')" class="animate-bing h-8 w-8 text-yellow-500 row-span-1"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <polyline points="12 16 16 12 12 8" />  <line x1="8" y1="12" x2="16" y2="12" /></svg>
-              <div class="flex flex-col content-center">
+            <div class="player-button play transition duration-1000 cursor-pointer">
+                <svg onclick="toggleSound()" class=" text-yellow-500 row-span-1"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <polygon points="10 8 16 12 10 16 10 8" /></svg>
+            </div>
+            <div class="player-button pause transition duration-1000 cursor-pointer">
+                <svg onclick="toggleSound()" class=" text-yellow-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <line x1="10" y1="15" x2="10" y2="9" />  <line x1="14" y1="15" x2="14" y2="9" /></svg>
+            </div>
+              <svg onclick="change('blue')" class="animate-bing h-8 w-8 text-yellow-500 row-span-1 transition duration-150 scale-100 hover:scale-150"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <polyline points="12 16 16 12 12 8" />  <line x1="8" y1="12" x2="16" y2="12" /></svg>
+              <div class="flex flex-col content-center hover:rotate-45">
                 <svg class="h-5 w-5 text-yellow-500 border-2 rounded-full border-yellow-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="4" y="4" width="16" height="16" rx="4" />  <circle cx="12" cy="12" r="3" />  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" /></svg>
                 <svg class="h-5 w-5 text-yellow-500 border-2 rounded-full border-yellow-500 mt-4"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
                 <svg class="h-5 w-5 text-yellow-500 border-2 rounded-full border-yellow-500 mt-4"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84 0 0 0 .497 -3.753C20.18 7.773 21.692 5.25 22 4.009z" /></svg>
@@ -46,10 +50,10 @@
     </div>
 </template>
 <template id="blue">
-    <div class="sm:hidden lg:grid grid-cols-12 h-auto">
+    <div class="hidden sm:grid grid-cols-12 h-auto">
         <div class="h-screen grid grid-cols-1 grid-rows-3 content-around justify-center">
             <img class="h-10 w-10 justify-self-center self-center row-span-1" src="../Assets/blue-logo (3).png" alt="Logo">
-            <svg onclick="change('yellow')" class="animate-bing h-8 w-8 justify-self-center self-center text-blue-700 row-span-1"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <line x1="8" y1="12" x2="16" y2="12" />  <line x1="8" y1="12" x2="12" y2="16" />  <line x1="8" y1="12" x2="12" y2="8" /></svg>
+            <svg onclick="change('yellow')" class="animate-bing h-8 w-8 justify-self-center self-center text-blue-700 row-span-1 transition duration-150 scale-100 hover:scale-150"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <line x1="8" y1="12" x2="16" y2="12" />  <line x1="8" y1="12" x2="12" y2="16" />  <line x1="8" y1="12" x2="12" y2="8" /></svg>
             <div class="row-span-1">
                 <!--<img class="justify-self-center rounded-md" src="../Assets/New Project (1).png" alt="wolf tribal">-->
             </div>
@@ -66,9 +70,13 @@
         <p class="vertical text-blue-500 text-center text-xl">で て け</p>
            
         <div class="h-screen grid content-around justify-center col-start-12">
-            <svg onclick="toggleSound()" class="h-8 w-8 text-blue-500 row-span-1 player-button play"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <polygon points="10 8 16 12 10 16 10 8" /></svg>
-            <svg onclick="toggleSound()" class="h-8 w-8 text-blue-500 player-button pause"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <line x1="10" y1="15" x2="10" y2="9" />  <line x1="14" y1="15" x2="14" y2="9" /></svg>          
-              <svg onclick="change('yellow')" class="animate-bing h-8 w-8 text-blue-700"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <line x1="16" y1="12" x2="8" y2="12" />  <line x1="16" y1="12" x2="12" y2="16" />  <line x1="16" y1="12" x2="12" y2="8" /></svg>
+            <div class="player-button play transition duration-1000 cursor-pointer">
+                <svg onclick="toggleSound()" class="text-blue-500 row-span-1"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <polygon points="10 8 16 12 10 16 10 8" /></svg>
+            </div>
+            <div class="player-button pause transition duration-1000 cursor-pointer">
+                <svg onclick="toggleSound()" class="text-blue-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <line x1="10" y1="15" x2="10" y2="9" />  <line x1="14" y1="15" x2="14" y2="9" /></svg>
+            </div>          
+              <svg onclick="change('yellow')" class="animate-bing h-8 w-8 text-blue-700 transition duration-150 scale-100 hover:scale-150"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <line x1="16" y1="12" x2="8" y2="12" />  <line x1="16" y1="12" x2="12" y2="16" />  <line x1="16" y1="12" x2="12" y2="8" /></svg>
               <div class="flex flex-col content-center">
                 <svg class="h-5 w-5 text-blue-700 border-2 rounded-full border-blue-700"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="4" y="4" width="16" height="16" rx="4" />  <circle cx="12" cy="12" r="3" />  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" /></svg>
                 <svg class="h-5 w-5 text-blue-700 border-2 rounded-full border-blue-700 mt-4"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
@@ -103,16 +111,16 @@
             let playerButtonClassList = playerButtons[x].classList;
             
             if(playerButtonClassList.contains('play') && isPlaying) {
-                playerButtonClassList.add('hidden')
+                playerButtonClassList.add('scale-0')
             }
             if(playerButtonClassList.contains('play') && !isPlaying) {
-                playerButtonClassList.remove('hidden')
+                playerButtonClassList.remove('scale-0')
             }
             if(playerButtonClassList.contains('pause') && isPlaying) {
-                playerButtonClassList.remove('hidden')
+                playerButtonClassList.remove('scale-0')
             }
             if(playerButtonClassList.contains('pause') && !isPlaying) {
-                playerButtonClassList.add('hidden')
+                playerButtonClassList.add('scale-0')
             }
         }
     }

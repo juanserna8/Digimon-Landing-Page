@@ -12,12 +12,3 @@ html {
 .vertical {
     writing-mode: vertical-lr;
 }
-
-.player-button {
-    opacity: 1;
-    transition: opacity 1s;
-}
-
-.player-button.fade {
-    opacity: 0;
-}
